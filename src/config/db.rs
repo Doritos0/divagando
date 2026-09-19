@@ -11,7 +11,7 @@ pub fn get_engine() -> &'static Mutex<SqliteConnection> {
         dotenv().ok();
         let db_name = env::var("BD_NAME").expect("BD_NAME debe estar configurada en .env");
         let conn = SqliteConnection::establish(&db_name)
-            .unwrap_or_else(|_| panic!("Error al conectar con la base de datos {}", db_name));
+            .unwrap_or_else(|e| panic!("Error al conectar con la base de datos {db_name}: {e}"));
         Mutex::new(conn)
     })
 }

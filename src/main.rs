@@ -13,6 +13,6 @@ fn main() {
 fn suma(numero_1: i32, numero_2: i32) -> i32{
     println!("Se entrega el siguiente numero 1: {numero_1}");
     println!("Se entrega el siguiente numero 2: {numero_2}, se sumaran");
-    let total: i32 = &numero_1 + &numero_2;
+    let total: i32 = numero_1 + numero_2;
     return total;
 }
